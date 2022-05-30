@@ -47,11 +47,17 @@
 <?php 
     require_once $_SERVER['DOCUMENT_ROOT']."/CANGRECODERS-GROUP-1/06-Code/db/db.php";
     
-    $listdatabases = new MongoDB\Driver\Command(["listCollections" => 1]);
-    $res = $manager->executeCommand("gestionEducativa", $listdatabases);
-    $collections = $res->toArray();
-
-    print_r($collections);
+    $filter = [];
+    $options = [];
+    $query = new MongoDB\Driver\Query($filter, $options);
+    $cursor = $manager->executeQuery('gestionEducativa.usuarios', $query);
+    
+    // Insert into database
+    foreach ($cursor as $document) {
+        $entry = json_encode($document, JSON_PRETTY_PRINT);
+        var_dump($entry);
+        
+    }
     
 
 ?>
