@@ -53,12 +53,24 @@
     $cursor = $manager->executeQuery('gestionEducativa.usuarios', $query);
     
     // Insert into database
+    echo '<table cellspacing="10" cellpadding="10" border>';
+    echo '<tr>';
+    echo '<th>Nombres</th>';
+    echo '<th>Apellidos</th>';
+    echo '<th>Perfil</th>';
+    echo '</tr>';
+
     foreach ($cursor as $document) {
-        $entry = json_encode($document, JSON_PRETTY_PRINT);
-        var_dump($entry);
-        
+        $document = json_decode(json_encode($document),true);
+            
+        echo '<tr>';
+        echo '<td>'.$document['nombre'].'</td>';
+        echo '<td>'.$document['apellidos'].'</td>';
+        echo '<td>'.$document['tipo_usuario'].'</td>';
+        echo '</tr>';
     }
-    
+
+
 
 ?>
 
