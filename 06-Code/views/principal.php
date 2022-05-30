@@ -22,27 +22,27 @@
     <div class="collapse navbar-collapse" id="navbarColor01">
       <ul class="navbar-nav me-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="#">Home
-            <span class="visually-hidden">(current)</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Features</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Pricing</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">About</a>
-        </li>
-         </ul>
-      <form class="d-flex">
-        <input class="form-control me-sm-2" type="text" placeholder="Search">
-        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-      </form>
+            <a class="nav-link" href="#">Home
+                <span class="visually-hidden">(current)</span>
+            </a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="#">Features</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="#">Pricing</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+            </li>
+            </ul>
+        <form class="d-flex">
+            <input class="form-control me-sm-2" type="text" placeholder="Search">
+            <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+        </form>
+        </div>
     </div>
-  </div>
-</nav>
+    </nav>
 
 <?php 
     require_once $_SERVER['DOCUMENT_ROOT']."/CANGRECODERS-GROUP-1/06-Code/db/db.php";
@@ -55,7 +55,7 @@
     // Insert into database
     
     echo '<div class="col-md-12">';
-    echo '<h1 style="text-align:center;">USUARIOS REGISTRADOS EN EL SISTEMA</h1>';
+    echo '<h1 style="text-align:center;">CONSULTA DE REGISTROS DEL SISTEMA</h1>';
     echo '<div class="row" style="padding-left: 10rem;padding-right: 10rem;">';
     echo '<table cellspacing="10" cellpadding="10" border>';
     echo '<tr>';
@@ -75,10 +75,24 @@
         echo '<td>'.$document['estatus'].'</td>';
         echo '</tr>';
     }
-    echo '</div>'
+    echo '</div>';
+    echo '</div>';
 
-
+   
 ?>
+ 
+ <div class="col-md-12">
+        <h1 style="text-align:center;">REGISTRO DE DATOS EN EL SISTEMA</h1>
+        <div class="row">
+            <?php
+            
+             
+            
+            
+            ?>
 
+        </div>
+
+    </div>
 </body>
 </html>
