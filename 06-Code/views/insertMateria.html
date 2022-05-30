@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="/CANGRECODERS-GROUP-1/06-Code/views/css/style.css">
+    <script src="/CANGRECODERS-GROUP-1/06-Code/views/js/registroDatos.js"></script>
+    <title>INGRESO DE MATERIAS AL SISTEMA</title>
+</head>
+<body>
+    <div class="container-fluid px-1 py-5 mx-auto">
+        <div class="row d-flex justify-content-center">
+            <div class="col-xl-7 col-lg-8 col-md-9 col-11 text-center">
+                <h3>REGISTRO DE MATERIAS</h3>
+                <p class="blue-text">Complete todos los campos para que la materia sea registrada</p>
+                <div class="card">
+                    
+                    <form class="form-card" onsubmit="event.preventDefault()">
+                        <div class="row justify-content-between text-left">
+                            <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Nombre de la Materia<span class="text-danger"> *</span></label> <input type="text" id="txtMateria" name="txtMateria" placeholder="Materia a impartir" onblur="validate(1)"> </div>
+                            <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Año Lectivo<span class="text-danger"> *</span></label> <input type="text" id="yearLectivo" name="yearLectivo" placeholder="ej:2021-2022" onblur="validate(2)"> </div>
+                        </div>
+                        <div class="row justify-content-between text-left">
+                            <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Departamento<span class="text-danger"> *</span></label> <input type="text" id="txtDepartamento" name="txtDepartamento" placeholder="ej. Idiomas" onblur="validate(3)"> </div>
+                            <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Nivel<span class="text-danger"> *</span></label> <input type="text" id="txtNivel" name="txtNivel" placeholder="ej: Noveno" onblur="validate(4)"> </div>
+                        </div>
+                        <div class="row justify-content-between text-left">
+                            <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Paralelo<span class="text-danger"> *</span></label> <input type="text" id="txtParalelo" name="txtDepartamento" placeholder="ej. A-B-C-D" onblur="validate(3)"> </div>
+                            <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Cédula Docente<span class="text-danger"> *</span></label> <input type="text" id="txtDocente" name="txtNivel" placeholder="ej: 1711990836" onblur="validate(4)"> </div>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="form-group col-sm-6"> <button onclick="registroMaterias()" type="submit" class="btn-block btn-primary">Registrar Materia</button> </div>
+                        </div>       
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
