@@ -14,13 +14,9 @@ function registroMaterias (){
         success : function (response)
         {
          if (response == 'registrado') {
-            var msg = 'MATERIA REGISTRADA EXISTOSAMENTE'
-            $("#getCodeModal").modal("toggle");
-            $("#getCode").html(msg);
+            $('#myModal').modal('show');
          }else{
-            var msg = 'LA MATERIA NO HA SIDO REGISTRADA'
-            $("#getCodeModal").modal("toggle");
-            $("#getCode").html(msg);
+            alert(error);
 
          }
 
