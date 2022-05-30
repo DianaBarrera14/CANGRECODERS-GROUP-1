@@ -23,16 +23,16 @@
                     
                     <form class="form-card" onsubmit="event.preventDefault()">
                         <div class="row justify-content-between text-left">
-                            <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Nombre de la Materia<span class="text-danger"> *</span></label> <input type="text" id="txtMateria" name="txtMateria" placeholder="Materia a impartir" onblur="validate(1)"> </div>
-                            <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Año Lectivo<span class="text-danger"> *</span></label> <input type="text" id="yearLectivo" name="yearLectivo" placeholder="ej:2021-2022" onblur="validate(2)"> </div>
+                            <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Nombre de la Materia<span class="text-danger"> *</span></label> <input type="text" id="txtMateria" name="txtMateria" placeholder="Materia a impartir" > </div>
+                            <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Año Lectivo<span class="text-danger"> *</span></label> <input type="text" id="yearLectivo" name="yearLectivo" placeholder="ej:2021-2022" > </div>
                         </div>
                         <div class="row justify-content-between text-left">
-                            <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Departamento<span class="text-danger"> *</span></label> <input type="text" id="txtDepartamento" name="txtDepartamento" placeholder="ej. Idiomas" onblur="validate(3)"> </div>
-                            <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Nivel<span class="text-danger"> *</span></label> <input type="text" id="txtNivel" name="txtNivel" placeholder="ej: Noveno" onblur="validate(4)"> </div>
+                            <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Departamento<span class="text-danger"> *</span></label> <input type="text" id="txtDepartamento" name="txtDepartamento" placeholder="ej. Idiomas" > </div>
+                            <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Nivel<span class="text-danger"> *</span></label> <input type="text" id="txtNivel" name="txtNivel" placeholder="ej: Noveno" > </div>
                         </div>
                         <div class="row justify-content-between text-left">
-                            <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Paralelo<span class="text-danger"> *</span></label> <input type="text" id="txtParalelo" name="txtDepartamento" placeholder="ej. A-B-C-D" onblur="validate(3)"> </div>
-                            <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Cédula Docente<span class="text-danger"> *</span></label> <input type="text" id="txtDocente" name="txtNivel" placeholder="ej: 1711990836" onblur="validate(4)"> </div>
+                            <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Paralelo<span class="text-danger"> *</span></label> <input type="text" id="txtParalelo" name="txtDepartamento" placeholder="ej. A-B-C-D" > </div>
+                            <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Cédula Docente<span class="text-danger"> *</span></label> <input type="text" id="txtDocente" name="txtNivel" placeholder="ej: 1711990836" > </div>
                         </div>
                         <div class="row justify-content-center">
                             <div class="form-group col-sm-6"> <button onclick="registroMaterias()" type="submit" class="btn-block btn-primary">Registrar Materia</button> </div>
