@@ -53,11 +53,16 @@
     $cursor = $manager->executeQuery('gestionEducativa.usuarios', $query);
     
     // Insert into database
+    
+    echo '<div class="col-md-12">';
+    echo '<h1 style="text-align:center;">USUARIOS REGISTRADOS EN EL SISTEMA</h1>';
+    echo '<div class="row" style="padding-left: 10rem;padding-right: 10rem;">';
     echo '<table cellspacing="10" cellpadding="10" border>';
     echo '<tr>';
     echo '<th>Nombres</th>';
     echo '<th>Apellidos</th>';
     echo '<th>Perfil</th>';
+    echo '<th>Status</th>';
     echo '</tr>';
 
     foreach ($cursor as $document) {
@@ -67,9 +72,10 @@
         echo '<td>'.$document['nombre'].'</td>';
         echo '<td>'.$document['apellidos'].'</td>';
         echo '<td>'.$document['tipo_usuario'].'</td>';
+        echo '<td>'.$document['estatus'].'</td>';
         echo '</tr>';
     }
-
+    echo '</div>'
 
 
 ?>
