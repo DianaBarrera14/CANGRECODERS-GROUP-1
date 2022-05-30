@@ -13,8 +13,16 @@ function registroMaterias (){
         data : {'materia':materia,'year':year,'departamento':departamento,'nivel':nivel,'paralelo':paralelo,'docente':docente},
         success : function (response)
         {
-         
-            console.log(response)
+         if (response == 'registrado') {
+            var msg = 'MATERIA REGISTRADA EXISTOSAMENTE'
+            $("#getCodeModal").modal("toggle");
+            $("#getCode").html(msg);
+         }else{
+            var msg = 'LA MATERIA NO HA SIDO REGISTRADA'
+            $("#getCodeModal").modal("toggle");
+            $("#getCode").html(msg);
+
+         }
 
 
         }
