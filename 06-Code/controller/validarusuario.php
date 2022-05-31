@@ -12,8 +12,8 @@ $users = $cursor->toArray();
 $result = count($users);
 
 if ($result != 0) {
-      echo 'validado';
+      echo 1;
 }else{
-    echo 'el usuario no existe';
+    echo 0;
 };
 ?>
