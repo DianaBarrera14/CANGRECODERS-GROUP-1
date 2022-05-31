@@ -65,7 +65,38 @@ function registroDocente (){
 
 
         }
-
-
-
     })
+}
+
+    function validaUsuario() {
+        var usuario =  $('#txtUsuario').val();
+        var password = $('#txtPassword').val();
+
+        console.log(usuario);
+        console.log(password);
+        var url = "http://localhost/CANGRECODERS-GROUP-1/06-Code/controller/validarUsuario.php"
+
+        $.ajax({
+            type: 'POST',
+            url : url,
+            data : {'usuario': usuario, 'password':password},
+            success: function(response)
+             
+            {
+                if (response =! 'validado') {
+                    console.log(response);
+                 }else{
+                    alert("Bienvenido " + usuario);
+                    window.location = "http://localhost/CANGRECODERS-GROUP-1/06-Code/views/principal.php";
+                    console.log(response);
+                    
+                 }
+
+            }
+
+
+
+        })
+
+
+    }
