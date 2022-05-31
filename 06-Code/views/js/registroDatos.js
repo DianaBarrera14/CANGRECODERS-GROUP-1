@@ -96,3 +96,40 @@ function registroDocente (){
 
 
     }
+
+
+    function registroEstudiante (){
+        var nombre = $('#txtNombre').val();
+        var apellidos = $('#txtApellido').val();
+        var telefono    = $('#txtTelefono').val();
+        var direccion = $('#txtDireccion').val();
+        var email = $('#txtCorreo').val();
+        var paralelo = $('#txtParalelos').val();
+        var cedula = $('#txtCedula').val();
+        var year    = $('#yearLectivo').val();
+        var nummaterias = $('#numMateria').val(); 
+        var usuario = $('#txtUsuario').val();
+        var password = $('#txtPassword').val();
+        var tipo_usuario = $('#txtTipo').val();
+        var estatus = $('#txtStatus').val();
+    
+    
+        var url = "http://localhost/CANGRECODERS-GROUP-1/06-Code/controller/insertarAlumno.php"
+    
+        $.ajax({
+            type: 'POST',
+            url : url,
+            data : {'nombre':nombre,'apellidos':apellidos,'telefono':telefono,'direccion':direccion,'paralelo':paralelo,'cedula':cedula,'year':year,'nummaterias':nummaterias,'usuario':usuario,'password':password,'tipo_usuario':tipo_usuario,'estatus':estatus},
+            success : function (response)
+            {
+             if (response == 1) {
+                 console.log(response);
+                $('#myModal').modal('show');
+             }else{
+                 console.log(response);
+                alert('no se ingreso el registro');
+    
+             }
+          }
+          })
+       }
