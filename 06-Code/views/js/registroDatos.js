@@ -81,7 +81,7 @@ function registroDocente (){
             {
                 if (response == 1) {
                     alert("Bienvenido " + usuario);
-                    window.location = "http://localhost/CANGRECODERS-GROUP-1/06-Code/views/principal.php"; 
+                    window.location = "http://localhost/CANGRECODERS-GROUP-1/06-Code/views/principal.html"; 
                 }else{
                     alert("El usuario " + usuario + " no existe, o la contraseña es incorrecta");
 
