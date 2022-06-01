@@ -133,3 +133,47 @@ function registroDocente (){
           }
           })
        }
+
+
+       function listarUsuarios (){
+        var url="http://localhost/CANGRECODERS-GROUP-1/06-Code/controller/listarUsuarios.php"
+        $.ajax({
+            type: 'POST',
+            url : url,
+            success : function (response)
+            {
+            let datos = JSON.parse(response);
+            console.log(response);
+            let template = "";
+            let templateTit = "";
+            templateTit += `
+            <table class="table" cellspacing="10" cellpadding="10">
+            <thead>
+            <tr>
+            <th>Nombres</th>
+            <th>Apellidos</th>
+            <th>Cédula de Identidad</th>
+            <th>Tipo de Usuario</th>
+            </tr>
+            </thead>
+            <tbody id="usuarios_data"></tbody>`
+            datos.forEach((elements) => {
+                template += `
+                <tr>
+                <td>${elements.nombres}</td>
+                <td>${elements.apellidos}</td>
+                <td>${elements.cedula}</td>
+                <td>${elements.tipo_usuario}</td>
+                </tr>
+                            
+                `
+                
+            })
+            $("#tabla_usuarios").html(templateTit);
+             $("#usuarios_data").html(template);
+            }
+          })
+
+
+
+       }

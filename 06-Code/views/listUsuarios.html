@@ -1,15 +1,17 @@
-<?php
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://bootswatch.com/5/cerulean/bootstrap.min.css">
-    <link rel="stylesheet" href="views/css/style.css">
-    <title>Sistema de Gestión Educativa</title>
+    <!-- jQuery -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+   
+    <link rel="stylesheet" href="/CANGRECODERS-GROUP-1/06-Code/views/css/style.css">
+    <script src="/CANGRECODERS-GROUP-1/06-Code/views/js/registroDatos.js"></script>
+    <title>Usuarios Registrados</title>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
@@ -30,14 +32,23 @@
                   <li class="nav-item">
                   <a class="nav-link" href="http://localhost/CANGRECODERS-GROUP-1/06-Code/views/insertMateria.html">Registrar Materias</a>
                   </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="http://localhost/CANGRECODERS-GROUP-1/06-Code/views/listUsuarios.html">Listar Usuarios</a>
+                    </li>
                   </ul>
               </div>
           </div>
           </nav>
-
-          <div class="col-md-12" style="text-align:center ;">
-              <img src="http://3.bp.blogspot.com/-3SU4vnmamCI/Uw_ikbObaEI/AAAAAAAAAB4/QKPeJUU8StI/s1600/42512529.jpg" alt="">
-
+          <div class="col-md-12" >
+            <div class="row" style="padding-left: 15rem;padding-right: 15rem;">
+              <div id="tabla_usuarios" style="
+              margin-left: 25%;"></div>
+            </div>
           </div>
-</body>
-</html>
+          <script>
+            window.onload = function() {
+          listarUsuarios();
+          };
+          </script>
+        </body>
+        </html>
