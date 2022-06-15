@@ -13,7 +13,7 @@ $obj = array (
 'departamento'=> $departamento,
 'nivel'=> $nivel,
 'paralelo' => $paralelo,
-'docente'=>$docente
+'cedula'=>$docente
 );
 
 $insert = new MongoDB\Driver\BulkWrite();
