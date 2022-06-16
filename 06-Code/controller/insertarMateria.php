@@ -8,12 +8,12 @@ $paralelo = $_POST['paralelo'];
 $docente = $_POST['docente'];
 
 $obj = array (
-'nombreMateria' => $materia,
-'yearLectivo' => $year,
-'departamento'=> $departamento,
-'nivel'=> $nivel,
-'paralelo' => $paralelo,
-'cedula'=>$docente
+'signatureName' => $materia,
+'schoolYear' => $year,
+'department'=> $departamento,
+'level'=> $nivel,
+'parallel' => $paralelo,
+'idCedula'=>$docente
 );
 
 $insert = new MongoDB\Driver\BulkWrite();

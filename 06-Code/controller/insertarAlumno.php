@@ -19,19 +19,13 @@ $estatus = $_POST['estatus'];
 
 
 $obj = array (
-'nombre' => $name,
-'apellidos' => $lastName,
-//'curso' => $nivel,
-'telefono' => $phone,
-'direccion'=> $address,
-'paralelo'=> $parallel,
-'cedula' => $identificationCard,
-'yearLectivo'=>$year,
-'numMaterias'=>$nummaterias,
-'usuario'=>$user,
+'name' => $name,
+'lastName' => $lastName,
+'idCedula' => $identificationCard,
+'user'=>$user,
 'password'=>$password,
-'tipo_usuario'=>$tipo_usuario,
-'estatus'=>$estatus
+'type_user'=>$tipo_usuario,
+'status'=>$estatus
 );
 
 $insert = new MongoDB\Driver\BulkWrite();

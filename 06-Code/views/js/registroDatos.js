@@ -76,7 +76,7 @@ function registroDocente (){
         $.ajax({
             type: 'POST',
             url : url,
-            data : {'usuario': usuario, 'password':password},
+            data : {'user': usuario, 'password':password},
             success: function(response)
             {
                 if (response == 1) {
