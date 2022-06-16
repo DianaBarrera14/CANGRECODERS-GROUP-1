@@ -18,21 +18,16 @@ $estatus = $_POST['estatus'];
 
 
 $obj = array (
-'nombre' => $nombre,
-'apellidos' => $apellidos,
-'nivel' => $nivel,
-'telefono' => $telefono,
-'direccion'=> $direccion,
-'paralelos'=> $paralelo,
-'cedula' => $docente,
-'nombremateria'=>$materias,
-'yearLectivo'=>$year,
-'numeroMaterias'=>$nummaterias,
-'salario'=>$salario,
-'usuario'=>$usuario,
+'name' => $nombre,
+'lastName' => $apellidos,
+'idCedula' => $docente,
+'user'=>$usuario,
 'password'=>$password,
-'tipo_usuario'=>$tipo_usuario,
-'estatus'=>$estatus
+'type_user'=>$tipo_usuario,
+'status'=>$estatus,
+'signatureName'=>$materias,
+'salary'=>$salario,
+'numCredits'=>null
 );
 
 $insert = new MongoDB\Driver\BulkWrite();

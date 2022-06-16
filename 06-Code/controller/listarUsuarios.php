@@ -9,7 +9,7 @@
 
     foreach ($cursor as $document) {
         $document = json_decode(json_encode($document),true);
-        $datos[]=array('nombres'=>$document['nombre'], 'apellidos'=>$document['apellidos'], 'cedula'=>$document['cedula'], 'tipo_usuario'=>$document['tipo_usuario'],);
+        $datos[]=array('nombres'=>$document['name'], 'apellidos'=>$document['lastName'], 'cedula'=>$document['idCedula'], 'tipo_usuario'=>$document['type_user'],);
         
     }
         
