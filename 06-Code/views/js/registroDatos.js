@@ -164,6 +164,8 @@ function registroDocente (){
                 <td>${elements.apellidos}</td>
                 <td>${elements.cedula}</td>
                 <td>${elements.tipo_usuario}</td>
+                <td><button class="btn btn-danger" onclick="borrarUsuario(${elements.cedula})>Borrar</button></td>
+                <td><button class="btn btn-primary">Editar</button></td>
                 </tr>
                             
                 `
