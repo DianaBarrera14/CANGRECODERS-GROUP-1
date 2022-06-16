@@ -27,7 +27,7 @@ $obj = array (
 'status'=>$estatus,
 'signatureName'=>$materias,
 'salary'=>$salario,
-'numCredits'=>$numCredits
+'numCredits'=>null
 );
 
 $insert = new MongoDB\Driver\BulkWrite();
