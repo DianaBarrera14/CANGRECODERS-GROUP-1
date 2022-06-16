@@ -112,6 +112,7 @@ function registroDocente (){
         var password = $('#txtPassword').val();
         var tipo_usuario = $('#txtTipo').val();
         var estatus = $('#txtStatus').val();
+        var numCredits = $('#txtCreditos').val();
     
     
         var url = "http://localhost/CANGRECODERS-GROUP-1/06-Code/controller/insertarAlumno.php"
@@ -119,7 +120,7 @@ function registroDocente (){
         $.ajax({
             type: 'POST',
             url : url,
-            data : {'nombre':nombre,'apellidos':apellidos,'telefono':telefono,'direccion':direccion,'paralelo':paralelo,'cedula':cedula,'year':year,'nummaterias':nummaterias,'usuario':usuario,'password':password,'tipo_usuario':tipo_usuario,'estatus':estatus},
+            data : {'nombre':nombre,'apellidos':apellidos,'telefono':telefono,'direccion':direccion,'paralelo':paralelo,'cedula':cedula,'year':year,'nummaterias':nummaterias,'usuario':usuario,'password':password,'tipo_usuario':tipo_usuario,'estatus':estatus,'numCredits':numCredits},
             success : function (response)
             {
              if (response == 1) {

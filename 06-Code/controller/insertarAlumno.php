@@ -1,31 +1,35 @@
 <?php
 require_once $_SERVER['DOCUMENT_ROOT']."/CANGRECODERS-GROUP-1/06-Code/db/db.php";
 
-$name = $_POST['nombre'];
-$lastName = $_POST['apellidos'];
+$nombre = $_POST['nombre'];
+$apellidos = $_POST['apellidos'];
 //$nivel = $_POST['curso'];
-$phone    = $_POST['telefono'];
-$address = $_POST['direccion'];
-$parallel = $_POST['paralelo'];
-$identificationCard = $_POST['cedula'];
+$telefono    = $_POST['telefono'];
+$direccion = $_POST['direccion'];
+$paralelo = $_POST['paralelo'];
+$cedula = $_POST['cedula'];
 //$materias = $_POST['materias'];
 $year = $_POST['year'];
 $nummaterias = $_POST['nummaterias'];
 //$salario = $_POST['salario'];
-$user = $_POST['usuario'];
+$usuario = $_POST['usuario'];
 $password = $_POST['password'];
 $tipo_usuario = $_POST['tipo_usuario'];
 $estatus = $_POST['estatus'];
 
 
+
 $obj = array (
-'name' => $name,
-'lastName' => $lastName,
-'idCedula' => $identificationCard,
-'user'=>$user,
+'name' => $nombre,
+'lastName' => $apellidos,
+'idCedula' => $cedula,
+'user'=>$usuario,
 'password'=>$password,
 'type_user'=>$tipo_usuario,
-'status'=>$estatus
+'status'=>$estatus,
+'signatureName'=>null,
+'salary'=>null,
+'numCredits'=>$nummaterias
 );
 
 $insert = new MongoDB\Driver\BulkWrite();

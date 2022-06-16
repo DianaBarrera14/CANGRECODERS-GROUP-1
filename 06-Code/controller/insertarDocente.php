@@ -24,9 +24,10 @@ $obj = array (
 'user'=>$usuario,
 'password'=>$password,
 'type_user'=>$tipo_usuario,
-'status'=>$estatus
+'status'=>$estatus,
 'signatureName'=>$materias,
 'salary'=>$salario,
+'numCredits'=>$numCredits
 );
 
 $insert = new MongoDB\Driver\BulkWrite();
