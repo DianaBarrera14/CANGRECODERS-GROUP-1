@@ -21,7 +21,7 @@ $conn = $db->getConnection();
 $data = json_decode(file_get_contents("php://input", true));
 
 //_id field value
-$id = $data->{'where'};
+$id = $data->{'id'};
 
 // delete record
 $delete = new MongoDB\Driver\BulkWrite();

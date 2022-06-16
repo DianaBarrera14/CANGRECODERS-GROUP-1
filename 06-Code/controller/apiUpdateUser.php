@@ -21,7 +21,7 @@ $conn = $db->getConnection();
 //record to update
 $data = json_decode(file_get_contents("php://input", true));
 
-$fields = $data->{'fields'};
+$fields = $data->{'datos'};
 
 $set_values = array();
 
@@ -33,7 +33,7 @@ foreach ($fields as $key => $fields) {
 }
 
 //_id field value
-$id = $data->{'where'};
+$id = $data->{'id'};
 
 // update record
 $update = new MongoDB\Driver\BulkWrite();
