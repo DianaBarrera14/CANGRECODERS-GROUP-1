@@ -11,7 +11,7 @@ header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers
 include_once $_SERVER['DOCUMENT_ROOT']."/CANGRECODERS-GROUP-1/06-Code/db/mongodb_config.php";
 
 $dbname = 'gestionEducativa';
-$collection = 'usuarios';
+$collection = 'materias';
 
 //DB connection
 $db = new DbManager();

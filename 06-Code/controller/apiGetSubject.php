@@ -8,7 +8,7 @@ header("Content-Type: application/json; charset=UTF-8");
 include_once $_SERVER['DOCUMENT_ROOT']."/CANGRECODERS-GROUP-1/06-Code/db/mongodb_config.php";
 
 $dbname = 'gestionEducativa';
-$collection = 'usuarios';
+$collection = 'materias';
 
 
 //DB connection
