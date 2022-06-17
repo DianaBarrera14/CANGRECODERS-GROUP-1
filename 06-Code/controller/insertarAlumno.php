@@ -1,10 +1,10 @@
 <?php
-require_once $_SERVER['DOCUMENT_ROOT']."/CANGRECODERS-GROUP-1/06-Code/02ServiciosWeb/db/db.php";
+require_once $_SERVER['DOCUMENT_ROOT']."/CANGRECODERS-GROUP-1/06-Code/db/db.php";
 
 $nombre = $_POST['nombre'];
 $apellidos = $_POST['apellidos'];
 //$nivel = $_POST['curso'];
-$telefono    = $_POST['telefono'];
+$telefono   = $_POST['telefono'];
 $direccion = $_POST['direccion'];
 $paralelo = $_POST['paralelo'];
 $cedula = $_POST['cedula'];
@@ -18,15 +18,14 @@ $tipo_usuario = $_POST['tipo_usuario'];
 $estatus = $_POST['estatus'];
 
 
-
 $obj = array (
 'name' => $nombre,
 'lastName' => $apellidos,
 'idCedula' => $cedula,
-'user'=>$usuario,
-'password'=>$password,
-'type_user'=>$tipo_usuario,
-'status'=>$estatus,
+'user'=> $usuario,
+'password'=> $password,
+'type_user'=> $tipo_usuario,
+'status'=> $estatus,
 'signatureName'=>null,
 'salary'=>null,
 'numCredits'=>$nummaterias
@@ -38,6 +37,7 @@ $result = $manager->executeBulkWrite('gestionEducativa.usuarios', $insert);
 
 if ($result->getInsertedCount() == 1) {
     echo 1;
+    
 	
 } else {
     echo 0;

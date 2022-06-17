@@ -1,6 +1,6 @@
 
 <?php
-require_once $_SERVER['DOCUMENT_ROOT']."/CANGRECODERS-GROUP-1/06-Code/db/db.php";
+require_once $_SERVER['DOCUMENT_ROOT']."/CANGRECODERS-GROUP-1/06-Code/02ServiciosWeb/db/db.php";
 $usuario = $_POST['usuario'] ;
 $password = $_POST['password'] ;
 $query = new MongoDB\Driver\Query(array('user' => $usuario,'password'=>$password));

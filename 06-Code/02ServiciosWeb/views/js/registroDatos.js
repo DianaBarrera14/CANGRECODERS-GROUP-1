@@ -5,7 +5,7 @@ function registroMaterias (){
     var nivel = $('#txtNivel').val();
     var paralelo = $('#txtParalelo').val();
     var docente = $('#txtDocente').val();
-    var url = "http://localhost/CANGRECODERS-GROUP-1/06-Code/controller/insertarMateria.php"
+    var url = "http://localhost/CANGRECODERS-GROUP-1/06-Code/02ServiciosWeb/controller/insertarMateria.php"
 
     $.ajax({
         type: 'POST',
@@ -48,7 +48,7 @@ function registroDocente (){
     var estatus = $('#txtStatus').val();
 
 
-    var url = "http://localhost/CANGRECODERS-GROUP-1/06-Code/controller/insertarDocente.php"
+    var url = "http://localhost/CANGRECODERS-GROUP-1/06-Code/02ServiciosWeb/controller/insertarDocente.php"
 
     $.ajax({
         type: 'POST',
@@ -71,7 +71,7 @@ function registroDocente (){
     function validaUsuario() {
         var usuario =  $('#txtUsuario').val();
         var password = $('#txtPassword').val();
-        var url = "http://localhost/CANGRECODERS-GROUP-1/06-Code/controller/validarusuario.php"
+        var url = "http://localhost/CANGRECODERS-GROUP-1/06-Code/02ServiciosWeb/controller/validarusuario.php"
 
         $.ajax({
             type: 'POST',
@@ -81,7 +81,7 @@ function registroDocente (){
             {
                 if (response == 1) {
                     alert("Bienvenido " + usuario);
-                    window.location = "http://localhost/CANGRECODERS-GROUP-1/06-Code/views/principal.html"; 
+                    window.location = "http://localhost/CANGRECODERS-GROUP-1/06-Code/02ServiciosWeb/views/principal.html"; 
                 }else{
                     alert("El usuario " + usuario + " no existe, o la contraseña es incorrecta");
 
@@ -115,7 +115,7 @@ function registroDocente (){
         var numCredits = $('#txtCreditos').val();
     
     
-        var url = "http://localhost/CANGRECODERS-GROUP-1/06-Code/controller/insertarAlumno.php"
+        var url = "http://localhost/CANGRECODERS-GROUP-1/06-Code/02ServiciosWeb/controller/insertarAlumno.php"
     
         $.ajax({
             type: 'POST',
@@ -137,7 +137,7 @@ function registroDocente (){
 
 
        function listarUsuarios (){
-        var url="http://localhost/CANGRECODERS-GROUP-1/06-Code/controller/listarUsuarios.php"
+        var url="http://localhost/CANGRECODERS-GROUP-1/06-Code/02ServiciosWeb/controller/listarUsuarios.php"
         $.ajax({
             type: 'POST',
             url : url,
