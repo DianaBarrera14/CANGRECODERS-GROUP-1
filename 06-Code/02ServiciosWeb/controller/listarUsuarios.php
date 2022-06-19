@@ -1,0 +1,17 @@
+<?php 
+    require_once "../db/db.php";
+    $filter = [];
+    $options = [];
+    $query = new MongoDB\Driver\Query($filter, $options);
+    $cursor = $manager->executeQuery('gestionEducativa.usuarios', $query);
+    
+ 
+
+    foreach ($cursor as $document) {
+        $document = json_decode(json_encode($document),true);
+        $datos[]=array('nombres'=>$document['name'], 'apellidos'=>$document['lastName'], 'cedula'=>$document['idCedula'], 'tipo_usuario'=>$document['type_user'],);
+        
+    }
+        
+    echo json_encode($datos);
+?>
