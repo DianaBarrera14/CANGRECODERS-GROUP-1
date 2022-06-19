@@ -1,5 +1,5 @@
 <?php
-require_once $_SERVER['DOCUMENT_ROOT']."/CANGRECODERS-GROUP-1/06-Code/db/db.php";
+require_once "../db/db.php";
 $cedula = 1720792751;//$_POST['cedula'];
 $obj = array (
     'cedula' => $cedula,

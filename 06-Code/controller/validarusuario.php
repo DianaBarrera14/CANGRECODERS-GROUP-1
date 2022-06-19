@@ -1,8 +1,8 @@
 
 <?php
-require_once $_SERVER['DOCUMENT_ROOT']."/CANGRECODERS-GROUP-1/06-Code/db/db.php";
-$usuario = $_POST['usuario'] ;
-$password = $_POST['password'] ;
+require_once "../db/db.php";
+$usuario = "jfcarrera3";//$_POST['usuario'] ;
+$password = 1711990836;//$_POST['password'] ;
 $query = new MongoDB\Driver\Query(array('user' => $usuario,'password'=>$password));
 
  //Output of the executeQuery will be object of MongoDB\Driver\Cursor class
