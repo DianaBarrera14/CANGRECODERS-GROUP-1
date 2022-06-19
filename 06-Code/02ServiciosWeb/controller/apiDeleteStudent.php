@@ -3,7 +3,7 @@
 // required headers
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
-header("Access-Control-Allow-Methods: POST");
+header("Access-Control-Allow-Methods: DELETE");
 header("Access-Control-Max-Age: 3600");
 header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
 
@@ -12,26 +12,36 @@ include_once $_SERVER['DOCUMENT_ROOT']."/CANGRECODERS-GROUP-1/06-Code/02Servicio
 
 $dbname = 'gestionEducativa';
 $collection = 'usuarios';
+
 //DB connection
 $db = new DbManager();
 $conn = $db->getConnection();
 
-//record to add
-$data = json_decode(file_get_contents("php://input"));
+//record to delete
+$data = json_decode(file_get_contents("php://input", true));
 
-// insert record
-$insert = new MongoDB\Driver\BulkWrite();
-$insert->insert($data);
-$result = $conn->executeBulkWrite("$dbname.$collection", $insert);
+//_id field value
+$id = $data->{'id'};
+
+// delete record
+$delete = new MongoDB\Driver\BulkWrite();
+$delete->delete(
+	['_id' => new MongoDB\BSON\ObjectId($id)],
+	['limit' => 0]
+);
+
+$result = $conn->executeBulkWrite("$dbname.$collection", $delete);
+
+//print_r($result);
 
 // verify
-if ($result->getInsertedCount() == 1) {
+if ($result->getDeletedCount() == 1) {
     echo json_encode(
-        array("message" => "Record successfully created")
-    );
+		array("message" => "Record successfully deleted")
+	);
 } else {
     echo json_encode(
-            array("message" => "Error while saving record")
+            array("message" => "Error while deleting record")
     );
 }
 
