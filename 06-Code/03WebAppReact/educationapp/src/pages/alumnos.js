@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Cookies from 'universal-cookie';
 import axios from 'axios';
 import StudentSearch from '../components/StudentSearch';
+import menu from './menu';
 
 const baseUrl = "http://localhost:3003/educationsystem/user";
 const cookies = new Cookies();
@@ -83,6 +84,7 @@ export default class alumnos extends Component {
 
 
       <div>
+        <menu />
         <StudentSearch />
         <div class="container-fluid px-1 py-5 mx-auto">
           <div class="row d-flex justify-content-center">
