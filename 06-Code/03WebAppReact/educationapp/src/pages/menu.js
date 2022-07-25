@@ -8,15 +8,15 @@ class menu extends Component {
         cookies.remove('id',{path:"/"});
         cookies.remove('cedula',{path:"/"});
         cookies.remove('name',{path:"/"});
-        cookies.remove('lastname',{path:"/"});
+        cookies.remove('lastName',{path:"/"});
         window.location.href='./'
     }
 
-     componentDidCatch(){
-      console.log('I was triggered during componentDidMount')
-       // if(!cookies.get('cedula')){
-         //   window.location.href="./menu";
-       // }
+     componentDidMount(){
+      
+       if(!cookies.get('cedula')){
+           window.location.href="./menu";
+        }
     }
 
   render() {
