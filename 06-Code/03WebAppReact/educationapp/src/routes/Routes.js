@@ -4,6 +4,7 @@ import Login from '../pages/login';
 import Menu from '../pages/menu'
 import Profesores from '../pages/profesores';
 import Alumnos from '../pages/alumnos';
+import Usuarios from '../pages/usuarios'
 function App() {
   return (
     <Router>
@@ -12,6 +13,7 @@ function App() {
         <Route exact path='/menu' element={<Menu/>}/> 
         <Route exact path='/profesores' element={<Profesores/>}/> 
         <Route exact path='/alumnos' element={<Alumnos/>}/> 
+        <Route exact path='/usuarios' element={<Usuarios/>}/> 
       </Routes>
     </Router>
   );
