@@ -68,13 +68,13 @@ export default class alumnos extends Component {
           [e.target.name]: e.target.value,
         },
       });
-    };
+    };*/
 
     componentDidMount(){
-      if (cookies.put('id')) {
+      if (!cookies.put('id')) {
         window.location.href = "./alumno";
       }
-    }*/
+    }
 
 
     
