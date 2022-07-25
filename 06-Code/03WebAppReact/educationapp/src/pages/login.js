@@ -35,22 +35,27 @@ class login extends Component {
       })
       .then((response) => {
         if (response) {
-       
           cookies.set("id", response.userid, { path: "/" });
           cookies.set("cedula", response.cedula, { path: "/" });
           cookies.set("name", response.name, { path: "/" });
           cookies.set("lastName", response.lastName, { path: "/" });
           alert(`Bienvenido ${response.name} ${response.lastName}`);
-          window.location.href="./menu";
+          window.location.href = "./menu";
         } else {
           alert("El usuario o la contraseña son incorrectos");
-        
         }
       })
       .catch((error) => {
         alert(error);
       });
   };
+
+    componentDidMount(){
+        if(cookies.get('id')){
+            window.location.href="./menu";
+        }
+    }
+
 
   render() {
     return (
