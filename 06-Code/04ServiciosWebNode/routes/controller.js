@@ -76,7 +76,7 @@ router.post("/user", async (req, res) => {
     user: req.body.user,
     password: req.body.password,
     name: req.body.name,
-    lastname:req.body.lastname,
+    lastName:req.body.lastName,
     type_user:req.body.type_user,
     status:req.body.status
   });
