@@ -5,6 +5,7 @@ const router = express.Router();
 router.get("/usuarios", async (req, res) => {
   try {
     const usuarios = await usuario.find();
+    res.header("Access-Control-Allow-Origin", "*");
     res.json(usuarios);
   } catch (err) {
     res.status(500).json({ message: err.message });
@@ -15,7 +16,7 @@ router.get("/usuarios", async (req, res) => {
 
 router.get("/usuario/:id/:password", async (req, res) => {
   try {
-    const userObj = await usuario.findOne({ idCedula: req.params.id, password:req.params.password });
+    const userObj = await usuario.findOne({ user: req.params.id, password:req.params.password });
     if (userObj == null) {
       res.status(400).json("User not found");
     } else {
@@ -28,6 +29,35 @@ router.get("/usuario/:id/:password", async (req, res) => {
   }
 });
 
+//Get user teacher
+
+router.get("/profesores", async (req, res) => {
+  try {
+    const userObj = await usuario.find({ type_user:"Docente" });
+    if (userObj == null) {
+      res.status(400).json("User not found");
+    } else {
+      res.json(userObj);
+    }
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+});
+
+//Get user student
+
+router.get("/estudiantes", async (req, res) => {
+  try {
+    const userObj = await usuario.find({ type_user:"Alumno" });
+    if (userObj == null) {
+      res.status(400).json("User not found");
+    } else {
+      res.json(userObj);
+    }
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+});
 //Creat user
 
 router.post("/user", async (req, res) => {

@@ -181,7 +181,7 @@ input[type=text], input[type=password] {
   display: inline-block;
   font-size: 16px;
   margin: 5px;
-  width: %;
+  width:50%;
   border: 2px solid #f6f6f6;
   -webkit-transition: all 0.5s ease-in-out;
   -moz-transition: all 0.5s ease-in-out;
@@ -453,17 +453,6 @@ li,ul{
   width: 100%;
 }
 
-.user input {
-  /*background: rgba(0, 0, 0, 0) url("../images/user.png") no-repeat scroll 7px 12px;*/
-}
-
-.pass input {
-  /*background: rgba(0, 0, 0, 0) url("../images/password.png") no-repeat scroll 7px 12px;*/
-}
-
-.mail input {
-  /*background: rgba(0, 0, 0, 0) url("../images/mail.png") no-repeat scroll 4px 12px;*/
-}
 
 .login-signup .tab-content {
   background: #ffffff none repeat scroll 0 0;
