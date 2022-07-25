@@ -8,6 +8,7 @@ router.get("/usuarios", async (req, res) => {
     res.header("Access-Control-Allow-Origin", "*");
     res.json(usuarios);
   } catch (err) {
+    res.header("Access-Control-Allow-Origin", "*");
     res.status(500).json({ message: err.message });
   }
 });
@@ -29,6 +30,7 @@ router.get("/usuario", async (req, res) => {
                 lastName:userObj.lastName});
     }
   } catch (error) {
+    res.header("Access-Control-Allow-Origin", "*");
     res.status(500).json({ message: error.message });
   }
 });
@@ -39,8 +41,10 @@ router.get("/profesores", async (req, res) => {
   try {
     const userObj = await usuario.find({ type_user:"Docente" });
     if (userObj == null) {
+      res.header("Access-Control-Allow-Origin", "*");
       res.status(400).json("User not found");
     } else {
+      res.header("Access-Control-Allow-Origin", "*");
       res.json(userObj);
     }
   } catch (error) {
@@ -54,8 +58,10 @@ router.get("/estudiantes", async (req, res) => {
   try {
     const userObj = await usuario.find({ type_user:"Alumno" });
     if (userObj == null) {
+      res.header("Access-Control-Allow-Origin", "*");
       res.status(400).json("User not found");
     } else {
+      res.header("Access-Control-Allow-Origin", "*");
       res.json(userObj);
     }
   } catch (error) {
@@ -80,6 +86,7 @@ router.post("/user", async (req, res) => {
     res.status(200).json(userCreate);
   }
   catch(error){
+    res.header("Access-Control-Allow-Origin", "*");
     res.status(500).json({message: error.message});
   }
 });

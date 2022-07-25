@@ -51,9 +51,11 @@ class login extends Component {
   };
 
     componentDidMount(){
-        if(cookies.get('id')){
-            window.location.href="./menu";
-        }
+
+      console.log('I was triggered during componentDidMount')
+       // if(cookies.get('id')){
+         //   window.location.href="./menu";
+       // }
     }
 
 
