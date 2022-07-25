@@ -14,15 +14,19 @@ router.get("/usuarios", async (req, res) => {
 
 //Get user by id
 
-router.get("/usuario/:id/:password", async (req, res) => {
+router.get("/usuario", async (req, res) => {
   try {
-    const userObj = await usuario.findOne({ user: req.params.id, password:req.params.password });
+    const userObj = await usuario.findOne({ user: req.query.user, password:req.query.password });
     if (userObj == null) {
+      res.header("Access-Control-Allow-Origin", "*");
       res.status(400).json("User not found");
     } else {
+      res.header("Access-Control-Allow-Origin", "*");
       res.json({userid:userObj._id,
                 cedula:userObj.idCedula,
-                profile:userObj.type_user});
+                profile:userObj.type_user,
+                name:userObj.name,
+                lastName:userObj.lastName});
     }
   } catch (error) {
     res.status(500).json({ message: error.message });

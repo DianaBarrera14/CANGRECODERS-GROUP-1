@@ -1,36 +1,56 @@
 import React, { Component } from "react";
-//import '../css/index.css';
-import axios from 'axios';
+import "../css/index.css";
+import axios from "axios";
+import Cookies from "universal-cookie";
 
-const baseUrl="http://localhost:3003/educationsystem/usuarios";
-
+const baseUrl = "http://localhost:3003/educationsystem/usuario";
+const cookies = new Cookies();
 class login extends Component {
-    state={
-        form:{
-            txtUsuario: '',
-            txtPassword: ''
+  state = {
+    form: {
+      txtUsuario: "",
+      txtPassword: "",
+    },
+  };
+
+  handleChange = async (e) => {
+    await this.setState({
+      form: {
+        ...this.state.form,
+        [e.target.name]: e.target.value,
+      },
+    });
+  };
+
+  iniciarSerion = async () => {
+    await axios
+      .get(baseUrl, {
+        params: {
+          user: this.state.form.txtUsuario,
+          password: this.state.form.txtPassword,
+        },
+      })
+      .then((response) => {
+        return response.data;
+      })
+      .then((response) => {
+        if (response) {
+       
+          cookies.set("id", response.userid, { path: "/" });
+          cookies.set("cedula", response.cedula, { path: "/" });
+          cookies.set("name", response.name, { path: "/" });
+          cookies.set("lastName", response.lastName, { path: "/" });
+          alert(`Bienvenido ${response.name} ${response.lastName}`);
+          window.location.href="./menu";
+        } else {
+          alert("El usuario o la contraseña son incorrectos");
+        
         }
-    }
-
-    handleChange=async e=>{
-        await this.setState({
-            form:{
-                ...this.state.form,
-                [e.target.name]:e.target.value
-            }
-        });
-    }
-
-    iniciarSerion=async()=>{
-        await axios.get(baseUrl,{params:{user:this.state.form.txtUsuario, password:this.state.form.txtPassword}})
-        .then(response=>{
-            console.log(response.data);
-        })
-        .catch(error=>{
-            alert(error);
-        })
-    }
-
+      })
+      .catch((error) => {
+        alert(error);
+      });
+  };
 
   render() {
     return (
@@ -62,7 +82,11 @@ class login extends Component {
               placeholder="Contraseña"
               onChange={this.handleChange}
             ></input>
-            <button onClick={()=> this.iniciarSerion()} type="submit" className="btn-primary">
+            <button
+              onClick={() => this.iniciarSerion()}
+              type="submit"
+              className="btn-primary"
+            >
               Ingresar
             </button>
           </form>
@@ -71,4 +95,4 @@ class login extends Component {
     );
   }
 }
- export default login;
+export default login;
