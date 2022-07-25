@@ -65,7 +65,7 @@ router.get("/estudiantes", async (req, res) => {
 //Creat user
 
 router.post("/user", async (req, res) => {
-  const userObject = new user({
+  const userObject = new usuario({
     idCedula: req.body.idCedula,
     user: req.body.user,
     password: req.body.password,
@@ -76,6 +76,7 @@ router.post("/user", async (req, res) => {
   });
   try{
     const userCreate = await userObject.save()
+    res.header("Access-Control-Allow-Origin", "*");
     res.status(200).json(userCreate);
   }
   catch(error){
