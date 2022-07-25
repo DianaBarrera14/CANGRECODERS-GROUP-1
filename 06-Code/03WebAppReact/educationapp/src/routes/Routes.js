@@ -14,7 +14,10 @@ function App() {
         <Route exact path='/menu' element={<Menu/>} /> 
         <Route exact path='/profesores' element={<Profesores/>} /> 
         <Route exact path='/alumnos' element={<Alumnos/>} /> 
+<<<<<<< HEAD
         <Route exact path='/usuarios' element={<Usuarios/>} /> 
+=======
+>>>>>>> 0a998e4dd26dabc1f4b570c56b76de80638ee170
       </Routes>
     </Router>
   );
