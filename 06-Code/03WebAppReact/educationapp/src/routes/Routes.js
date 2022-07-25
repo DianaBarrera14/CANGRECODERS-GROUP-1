@@ -11,16 +11,10 @@ function App() {
     <Router>
       <Routes>
         <Route exact path='/' element={<Login/>} />
-<<<<<<< HEAD
         <Route exact path='/menu' element={<Menu/>} /> 
         <Route exact path='/profesores' element={<Profesores/>} /> 
         <Route exact path='/alumnos' element={<Alumnos/>} /> 
-=======
-        <Route exact path='/menu' element={<Menu/>}/> 
-        <Route exact path='/profesores' element={<Profesores/>}/> 
-        <Route exact path='/alumnos' element={<Alumnos/>}/> 
-        <Route exact path='/usuarios' element={<Usuarios/>}/> 
->>>>>>> be641b830d8440ca0603f79e6e62ade75a54f9e3
+        <Route exact path='/usuarios' element={<Usuarios/>} /> 
       </Routes>
     </Router>
   );
