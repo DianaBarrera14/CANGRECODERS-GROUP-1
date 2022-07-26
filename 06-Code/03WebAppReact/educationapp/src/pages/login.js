@@ -2,8 +2,9 @@ import React, { Component } from "react";
 import "../css/index.css";
 import axios from "axios";
 import Cookies from "universal-cookie";
+import { ApiUrl } from "../services/apiServices";
 
-const baseUrl = "http://3.86.165.121:3003/educationsystem/usuario";
+const baseUrl = ApiUrl + "usuario";
 const cookies = new Cookies();
 
 class login extends Component {
@@ -51,7 +52,7 @@ class login extends Component {
         }
       })
       .catch((error) => {
-        alert(error);
+        alert("El usuario o la contraseña son incorrectos");
       });
   };
 

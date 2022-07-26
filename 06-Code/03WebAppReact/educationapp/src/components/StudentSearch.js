@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
+import { ApiUrl } from "../services/apiServices";
 
 const StudentSearch = () => {
   const [client, setClient] = useState();
-  const url = "http://3.86.165.121:3003/educationsystem/estudiantes";
+  const url = ApiUrl + "estudiantes";
   const fetchApi = async () => {
     const response = await fetch(url);
     const responseJSON = await response.json();
