@@ -3,9 +3,16 @@ import "../css/index.css";
 import axios from "axios";
 import Cookies from "universal-cookie";
 
-const baseUrl = "http://localhost:3003/educationsystem/usuario";
+const baseUrl = "http://3.86.165.121:3003/educationsystem/usuario";
 const cookies = new Cookies();
+
+
 class login extends Component {
+  
+  manejadorSubmit(e){
+    e.preventDefault();
+  }
+
   state = {
     form: {
       txtUsuario: "",
@@ -13,8 +20,8 @@ class login extends Component {
     },
   };
 
-  handleChange = async (e) => {
-    await this.setState({
+  handleChange = (e) => {
+    this.setState({
       form: {
         ...this.state.form,
         [e.target.name]: e.target.value,
@@ -22,7 +29,7 @@ class login extends Component {
     });
   };
 
-  iniciarSerion = async () => {
+  iniciarSesion = async () => {
     await axios
       .get(baseUrl, {
         params: {
@@ -32,6 +39,7 @@ class login extends Component {
       })
       .then((response) => {
         return response.data;
+        
       })
       .then((response) => {
         if (response) {
@@ -40,7 +48,7 @@ class login extends Component {
           cookies.set("name", response.name, { path: "/" });
           cookies.set("lastName", response.lastName, { path: "/" });
           alert(`Bienvenido ${response.name} ${response.lastName}`);
-          window.location.href = "./menu";
+          window.location.href = "./principal";
         } else {
           alert("El usuario o la contraseña son incorrectos");
         }
@@ -50,12 +58,11 @@ class login extends Component {
       });
   };
 
-    componentDidMount(){
-
-       if(cookies.get('id')){
-           window.location.href="./menu";
-       }
+  componentDidMount() {
+    if (cookies.get("id")) {
+      window.location.href = "./principal";
     }
+  }
 
 
   render() {
@@ -71,7 +78,7 @@ class login extends Component {
             />
           </div>
 
-          <form>
+          <form onSubmit={this.manejadorSubmit} >
             <input
               type="text"
               id="txtUsuario"
@@ -89,8 +96,8 @@ class login extends Component {
               onChange={this.handleChange}
             ></input>
             <button
-              onClick={() => this.iniciarSerion()}
               type="submit"
+              onClick={() => this.iniciarSesion()}
               className="btn-primary"
             >
               Ingresar

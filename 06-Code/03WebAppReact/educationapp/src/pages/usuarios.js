@@ -3,15 +3,23 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Cookies from 'universal-cookie';
 import axios from 'axios';
 import UserSearch from '../components/UserSearch';
+import MenuApp from '../components/menu';
+
+const cookies = new Cookies();
 
 export default class usuarios extends Component {
-
+  componentDidMount() {
+    if (!cookies.get("id")) {
+      window.location.href = "./";
+    }
+  }
  
     render() {
     return (
 
 
       <div>
+        <MenuApp />
         <UserSearch />
         <div class="container-fluid px-1 py-5 mx-auto">
           <div class="row d-flex justify-content-center">

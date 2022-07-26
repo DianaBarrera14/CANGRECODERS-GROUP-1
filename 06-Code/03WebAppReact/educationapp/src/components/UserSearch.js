@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 
 const UserSearch = () => {
     const [client, setClient] = useState();
-    const url = "http://localhost:3003/educationsystem/usuarios";
+    const url = "http://3.86.165.121:3003/educationsystem/usuarios";
     const fetchApi = async () => {
         const response = await fetch(url)
         const responseJSON = await response.json()

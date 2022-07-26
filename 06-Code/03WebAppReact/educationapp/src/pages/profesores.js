@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Cookies from 'universal-cookie';
 import axios from 'axios';
 import TeachersSearch from '../components/TeachersSearch';
+import MenuApp from '../components/menu';
 
 const baseUrl = "http://localhost:3000/educationsystem/user";
 const cookies = new Cookies();
@@ -11,6 +12,11 @@ const url="http://localhost:3000/educationsystem/profesores";
 
 export default class profesores extends Component {
 
+  componentDidMount() {
+    if (!cookies.get("id")) {
+      window.location.href = "./";
+    }
+  }
   
     /* Future post
     state = {
@@ -83,6 +89,7 @@ export default class profesores extends Component {
 
 
       <div>
+        <MenuApp/>
         <TeachersSearch />
         <div class="container-fluid px-1 py-5 mx-auto">
           <div class="row d-flex justify-content-center">
