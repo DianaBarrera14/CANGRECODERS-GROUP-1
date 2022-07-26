@@ -5,82 +5,13 @@ import axios from 'axios';
 import TeachersSearch from '../components/TeachersSearch';
 import MenuApp from '../components/menu';
 
-const baseUrl = "http://localhost:3000/educationsystem/user";
+
 const cookies = new Cookies();
-//const [client, setClient] = useState(null);
-const url="http://localhost:3000/educationsystem/profesores";
+
+
 
 export default class profesores extends Component {
 
-  componentDidMount() {
-    if (!cookies.get("id")) {
-      window.location.href = "./";
-    }
-  }
-  
-    /* Future post
-    state = {
-      form: {
-        txtUsuario: "",
-        txtPassword: "",
-      },
-    };
-
-    handleChange = async (e) => {
-      await this.setState({
-        form: {
-          ...this.state.form,
-          [e.target.name]: e.target.value,
-        },
-      });
-    };
-    putTeachers = async () => {
-      await axios
-        .post(baseUrl, {
-          params: {
-            idCedula: this.state.form.txtCedula,
-            user: this.state.form.txtUsuario,
-            password: this.state.form.txtPassword,
-            name: this.state.form.txtNombre,
-            lastname: this.state.form.txtApellido,
-            type_user: this.state.form.txtTipo,
-            status: this.state.form.txtStatus
-          },
-        })
-        .then((response) => {
-          return response.data;
-        })
-        .then((response) => {
-          if (response) {
-            cookies.set("id", response.userid, { path: "/profesores" });
-            cookies.set("cedula", response.cedula, { path: "/profesores" });
-            cookies.set("name", response.name, { path: "/uprofesores" });
-            cookies.set("lastName", response.lastName, { path: "/profesores" });
-            alert(`Bienvenido ${response.name} ${response.lastName}`);
-            window.location.href = "./profesores";
-          } else {
-            alert("El usuario o la contraseña son incorrectos");
-          }
-        })
-        .catch((error) => {
-          alert(error);
-        });
-    };
-
-    handleChange = async (e) => {
-      await this.setState({
-        form: {
-          ...this.state.form,
-          [e.target.name]: e.target.value,
-        },
-      });
-    };
-
-    componentDidMount(){
-      if (cookies.put('id')) {
-        window.location.href = "./profesor";
-      }
-    }*/
 
 
     
