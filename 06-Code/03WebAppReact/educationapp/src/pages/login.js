@@ -6,10 +6,8 @@ import Cookies from "universal-cookie";
 const baseUrl = "http://3.86.165.121:3003/educationsystem/usuario";
 const cookies = new Cookies();
 
-
 class login extends Component {
-  
-  manejadorSubmit(e){
+  manejadorSubmit(e) {
     e.preventDefault();
   }
 
@@ -39,7 +37,6 @@ class login extends Component {
       })
       .then((response) => {
         return response.data;
-        
       })
       .then((response) => {
         if (response) {
@@ -64,7 +61,6 @@ class login extends Component {
     }
   }
 
-
   render() {
     return (
       <div className="wrapper fadeInDown">
@@ -78,7 +74,7 @@ class login extends Component {
             />
           </div>
 
-          <form onSubmit={this.manejadorSubmit} >
+          <form onSubmit={this.manejadorSubmit}>
             <input
               type="text"
               id="txtUsuario"

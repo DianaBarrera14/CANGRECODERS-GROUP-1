@@ -1,15 +1,11 @@
-import { getAllByText } from '@testing-library/react';
-import React, { useEffect, useState } from 'react';
+import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { cerrarSesion } from './singOut';
+import { cerrarSesion } from "./singOut";
 
 const menu = () => {
-
-
-
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
-      <a className="navbar-brand">MENU DEL SISTEMA</a>
+      <h6 className="navbar-brand">MENU DEL SISTEMA</h6>
 
       <div className="collapse navbar-collapse" id="navbarSupportedContent">
         <ul className="navbar-nav mr-auto">
@@ -32,7 +28,7 @@ const menu = () => {
           <li className="nav-item">
             <button
               className="btn btn-primary btn-sm"
-              onClick={()=>cerrarSesion()}
+              onClick={() => cerrarSesion()}
             >
               Cerrar Sesión
             </button>
@@ -40,7 +36,7 @@ const menu = () => {
         </ul>
       </div>
     </nav>
-  )
-}
+  );
+};
 
 export default menu;
