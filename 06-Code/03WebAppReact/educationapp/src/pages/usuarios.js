@@ -7,7 +7,7 @@ import MenuApp from "../components/menu";
 const cookies = new Cookies();
 
 export default class usuarios extends Component {
-  componentDidMount() {
+  componentWillMount() {
     if (!cookies.get("id")) {
       window.location.href = "./";
     }

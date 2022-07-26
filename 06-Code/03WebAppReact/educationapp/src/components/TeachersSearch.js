@@ -7,7 +7,6 @@ const TeachersSearch = () => {
     const response = await fetch(url);
     const responseJSON = await response.json();
     setClient(responseJSON);
-    //console.log(responseJSON)
   };
   useEffect(() => {
     fetchApi();

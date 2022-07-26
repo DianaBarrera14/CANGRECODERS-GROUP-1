@@ -5,7 +5,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Picture from "../assets/images/principal.jpg"
 const cookies = new Cookies();
 export default class principal extends Component {
-  componentDidMount() {
+  
+  componentWillMount() {
     if (!cookies.get("id")) {
       window.location.href = "./";
     }
