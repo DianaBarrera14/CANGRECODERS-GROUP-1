@@ -12,7 +12,7 @@ const StudentSearch = () => {
   };
   useEffect(() => {
     fetchApi();
-  }, []);
+  }, );
 
   return (
     <div>

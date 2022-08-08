@@ -11,7 +11,7 @@ const UserSearch = () => {
   };
   useEffect(() => {
     fetchApi();
-  }, []);
+  }, );
 
   return (
     <div>

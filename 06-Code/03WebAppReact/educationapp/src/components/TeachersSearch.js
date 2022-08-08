@@ -10,7 +10,7 @@ const TeachersSearch = () => {
   };
   useEffect(() => {
     fetchApi();
-  }, []);
+  },);
 
   return (
     <div>
