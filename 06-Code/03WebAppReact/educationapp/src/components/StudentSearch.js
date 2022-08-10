@@ -3,7 +3,7 @@ import { ApiUrl } from "../services/apiServices";
 
 const StudentSearch = () => {
   const [client, setClient] = useState();
-  const url = ApiUrl + "estudiantes";
+  const url = ApiUrl + "students";
   const fetchApi = async () => {
     const response = await fetch(url);
     const responseJSON = await response.json();
