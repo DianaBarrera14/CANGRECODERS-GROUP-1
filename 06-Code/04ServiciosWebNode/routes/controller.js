@@ -146,4 +146,21 @@ router.patch('/usuario/:id', async (req, res) => {
       res.status(400).json({ message: error.message })
   }
 })
+
+router.put('/usuario/:id', async (req, res) => {
+  try {
+      const idCedula = req.params.id;
+      const updatedData = req.body;
+      const options = { new: true };
+
+      const result = await usuario.findOneAndUpdate(
+          idCedula, updatedData, options
+      )
+
+      res.send(result)
+  }
+  catch (error) {
+      res.status(400).json({ message: error.message })
+  }
+})
 module.exports = router;
