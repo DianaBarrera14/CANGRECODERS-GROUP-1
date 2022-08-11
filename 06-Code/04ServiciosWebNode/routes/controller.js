@@ -116,4 +116,49 @@ router.post("/login", async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 });
+
+//delete user by cedula
+
+router.delete('/usuario', (req, res) => {
+  usuario.deleteOne({idCedula: req.body.cedula}).then(
+    () => {
+      res.status(200).json({
+        message: 'Deleted!'
+      });
+    }
+  ).catch(
+    (error) => {
+      res.status(400).json({
+        error: error
+      });
+    }
+  );
+});
+
+//update by id
+
+router.put('/usuario', (req, res, next) => {
+    const usuarioObj = new usuario({
+    idCedula: require.body.idCedula,
+    user: require.body.user,
+    password: require.body.password,
+    name: require.body.name,
+    lastName: require.body.lastName,
+    type_user: require.body.type_user,
+    status: require.body.status
+  });
+  usuario.updateOne({cedula: req.body.idCedula}, usuarioObj).then(
+    () => {
+      res.status(201).json({
+        message: 'User updated successfully!'
+      });
+    }
+  ).catch(
+    (error) => {
+      res.status(400).json({
+        error: error
+      });
+    }
+  );
+});
 module.exports = router;
