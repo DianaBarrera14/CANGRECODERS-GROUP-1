@@ -12,6 +12,26 @@ const TeachersSearch = () => {
     fetchApi();
   },);
 
+  function deleteTeacher (idCedula){
+    fetch(ApiUrl + `usuario/${idCedula}`,{
+      method: 'DELETE',
+    }).then(res => res.json())
+    .then(data => {
+      console.log(data);
+      alert('Teacher with id ' + idCedula + ' was deleted!')
+   
+    })
+  }
+  /*Other option to delete
+  function deleteTeacher(idCedula) {
+    axios.post(ApiUrl + 'usuario', { idCedula: idCedula }).then(res => {
+      console.log(res.data)
+      alert('Teacher with id ' + idCedula + ' was deleted!')
+
+    }).catch(err => {
+      console.log(err)
+    })
+  }*/
   return (
     <div>
       <div class="card-body">
@@ -19,7 +39,7 @@ const TeachersSearch = () => {
         <br />
         <h3 className="text-center">GET TEACHERS INFORMATION FROM API</h3>
         <br />
-        <h5>This shows teachers information from API: {url}</h5>
+        <h5>This shows teacher information from API: {url}</h5>
         <br />
         <br />
       </div>
@@ -34,24 +54,32 @@ const TeachersSearch = () => {
             <th scope="col">password</th>
             <th scope="col">type user</th>
             <th scope="col">status</th>
+            <th scope="col">number of credits</th>
           </tr>
         </thead>
         <tbody>
           {!client
             ? "Loading"
             : client.map((client, index) => {
-                return (
-                  <tr className="table-info">
-                    <td className="text-center">{client.idCedula}</td>
-                    <td className="text-center">{client.name}</td>
-                    <td className="text-center">{client.lastName}</td>
-                    <td className="text-center">{client.user}</td>
-                    <td className="text-center">{client.password}</td>
-                    <td className="text-center">{client.type_user}</td>
-                    <td className="text-center">{client.status}</td>
-                  </tr>
-                );
-              })}
+              return (
+                <tr className="table-info">
+                  <td className="text-center">{client.idCedula}</td>
+                  <td className="text-center">{client.name}</td>
+                  <td className="text-center">{client.lastName}</td>
+                  <td className="text-center">{client.user}</td>
+                  <td className="text-center">{client.password}</td>
+                  <td className="text-center">{client.type_user}</td>
+                  <td className="text-center">{client.status}</td>
+                  <td>
+                  <Link to={`/profesores/${client.idCedula}`}><button className="btn btn-outline-info">Editar</button></Link>
+                  &nbsp;
+                  &nbsp;
+                  <button type="button" onClick={() => { deleteTeacher(client.idCedula) }} class="btn btn-outline-info">Borrar</button>
+                  </td>
+                </tr>
+
+              );
+            })}
         </tbody>
       </table>
     </div>
