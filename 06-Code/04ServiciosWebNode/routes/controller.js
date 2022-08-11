@@ -2,6 +2,19 @@ const express = require("express");
 const usuario = require("../models/users");
 const router = express.Router();
 
+//cors problem solve
+
+router.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Headers', 'Authorization, X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Request-Method');
+  res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');
+  res.header('Allow', 'GET, POST, OPTIONS, PUT, DELETE');
+  next();
+});
+
+
+
+
 
 //Get all users
 router.get("/usuarios", async (req, res) => {
