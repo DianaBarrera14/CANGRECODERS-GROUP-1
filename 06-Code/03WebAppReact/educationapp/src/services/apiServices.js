@@ -1,1 +1,1 @@
-export const ApiUrl = "http://localhost:3003/educationsystem/";
+export const ApiUrl = "http:///34.125.28.37:3003/educationsystem/";

@@ -9,19 +9,19 @@ const menu = () => {
 
       <div className="collapse navbar-collapse" id="navbarSupportedContent">
         <ul className="navbar-nav mr-auto">
-          <li className="nav-item active">
+         <li className="nav-item active">
             <a className="nav-link" href="./usuarios">
-              Listar Usuarios
+              Gestión de Usuarios
             </a>
           </li>
           <li className="nav-item active">
             <a className="nav-link" href="./alumnos">
-              Listar Estudiantes
+              Gestión de Estudiantes
             </a>
           </li>
           <li className="nav-item active">
             <a className="nav-link" href="./profesores">
-              Listar Docentes
+              GEstión de  Docentes
             </a>
           </li>
 
