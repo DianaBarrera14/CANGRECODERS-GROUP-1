@@ -63,8 +63,9 @@ function EditStudent() {
             type_user: type_user,
             status: status
         }
+    
         //Hacer la petición usando axios
-        axios.put(baseUrl+`/${idCedula}`, actualizarusuario)
+        axios.put(baseUrl+`/${params.id}`, actualizarusuario)
             .then(res => {
                 console.log(res.data)
                 alert('Student with id: '+res.data.idCedula+' was updated.')

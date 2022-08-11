@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { ApiUrl } from "../services/apiServices";
+import { ApiUrl} from "../services/apiServices";
+import {Link, useNavigate} from 'react-router-dom'
 const TeachersSearch = () => {
   const [client, setClient] = useState();
   const url = ApiUrl + "profesores";
@@ -86,5 +87,9 @@ const TeachersSearch = () => {
   );
 };
 
+<<<<<<< HEAD
 export default TeachersSearch;
 
+=======
+export default TeachersSearch;
+>>>>>>> c7680995a22ffa9631df547cd168d4ee40fc5ea3

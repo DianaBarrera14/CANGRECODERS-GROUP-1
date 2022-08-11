@@ -6,6 +6,8 @@ import Alumnos from '../pages/alumnos';
 import Usuarios from '../pages/usuarios'
 import Principal from '../pages/principal';
 import EditStudent from '../components/editStudent';
+import EditUser from '../components/editUser';
+import EditTeacher from '../components/editTeacher';
 
 function App() {
   
@@ -18,6 +20,8 @@ function App() {
         <Route exact path='/alumnos' element={<Alumnos/>}/> 
         <Route exact path='/usuarios' element={<Usuarios/>}/> 
         <Route exact path='/alumnos/:id' element={<EditStudent />}></Route>
+        <Route exact path='/usuarios/:id' element={<EditUser />}></Route>
+        <Route exact path='/profesores/:id' element={<EditTeacher />}></Route>
       </Routes>
     </Router>
   );

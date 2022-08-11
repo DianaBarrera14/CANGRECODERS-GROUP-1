@@ -3,11 +3,7 @@ import axios from 'axios'
 import { useParams, Link } from 'react-router-dom'
 import { ApiUrl } from '../services/apiServices';
 //Construimos el componente
-<<<<<<< HEAD
-function EditStudent() {
-=======
-function EditTeacher() {
->>>>>>> c7680995a22ffa9631df547cd168d4ee40fc5ea3
+function EditUser() {
     const params = useParams();
     const baseUrl = ApiUrl + "usuario"
 
@@ -35,32 +31,7 @@ function EditTeacher() {
         })
     }, [])
 
-    //Funcion para actualizar
-    /*function updateTeacher(idCedula){
-        fetch(baseUrl+`/${idCedula}`,{
-            method: 'PUT',
-            body: 
-          })
-        .then(res => res.json())
-        .then(data => {
-            console.log(data);
-            this.setState({
-                idCedula: data.idCedula,
-                user: data.user,
-                password: data.password,
-                name: data.name,
-                lastName: data.lastName,
-                type_user: data.type_user,
-                status: data.status
-            })
-        })
-        
-    }*/
-<<<<<<< HEAD
-    function updateStudent() {
-=======
-    function updateTeacher() {
->>>>>>> c7680995a22ffa9631df547cd168d4ee40fc5ea3
+    function updateUser() {
         //Nuevo objeto para actualizar el usuario:
         const actualizarusuario = {
             idCedula: idCedula,
@@ -71,11 +42,12 @@ function EditTeacher() {
             type_user: type_user,
             status: status
         }
+    
         //Hacer la petición usando axios
-        axios.put(baseUrl+`/${idCedula}`, actualizarusuario)
+        axios.put(baseUrl+`/${params.id}`, actualizarusuario)
             .then(res => {
                 console.log(res.data)
-                alert('Teacher with id: '+res.data.idCedula+' was updated.')
+                alert('Student with id: '+res.data.idCedula+' was updated.')
             })
             .then(err => { console.log(err) })
     }
@@ -89,11 +61,11 @@ function EditTeacher() {
             <div class="row d-flex justify-content-center">
 
                 <div class="col-xl-7 col-lg-8 col-md-9 col-11 text-center">
-                    <Link to={`/Teachers`}><button className="btn btn-primary btn-lg btn-block">Volver a listar profesores</button></Link>
+                    <Link to={`/usuarios`}><button className="btn btn-primary btn-lg btn-block">Volver a listar usuarios</button></Link>
                     <hr />
-                    <h3>REGISTRO DE PROFESORES</h3>
+                    <h3>REGISTRO DE USUARIOS</h3>
                     <p class="blue-text">
-                        Complete todos los campos para registrar al Profesor
+                        Complete todos los campos para registrar al Usuario
                     </p>
                     <div class="card">
 
@@ -101,12 +73,12 @@ function EditTeacher() {
                             <div class="form-group col-sm-6 flex-column d-flex">
 
                                 <label htmlfor="idCedula" class="form-control-label px-3">
-                                    Cédula Profesor<span class="text-danger"> *</span>
+                                    Cédula Usuario<span class="text-danger"> *</span>
                                 </label>
                                 <input
                                     type="text"
 
-                                    placeholder="ej: 0707643200"
+                                    placeholder="ej: 0701990836"
                                     value={idCedula} onChange={(e) => { setIdCedula(e.target.value) }}
                                 />
                             </div>
@@ -142,25 +114,25 @@ function EditTeacher() {
                             <div class="form-group col-sm-6 flex-column d-flex">
                                 {" "}
                                 <label class="form-control-label px-3">
-                                    Nombres del Profesor
+                                    Nombres del usuario
                                     <span class="text-danger"> *</span>
                                 </label>{" "}
                                 <input
                                     type="text"
 
-                                    placeholder="Nombres del Profesor"
+                                    placeholder="Nombres del Usuario"
                                     value={name} onChange={(e) => { setName(e.target.value) }}
                                 />{" "}
                             </div>
                             <div class="form-group col-sm-6 flex-column d-flex">
                                 {" "}
                                 <label class="form-control-label px-3">
-                                    Apellidos del Profesor
+                                    Apellidos del usuario
                                     <span class="text-danger"> *</span>
                                 </label>{" "}
                                 <input
                                     type="text"
-                                    placeholder="Apellidos del Profesor "
+                                    placeholder="Apellidos del Usuario "
                                     value={lastName} onChange={(e) => { setLastName(e.target.value) }}
                                 />{" "}
                             </div>
@@ -193,11 +165,11 @@ function EditTeacher() {
                             <div class="form-group col-sm-6">
                                 {" "}
                                 <button
-                                    onClick={updateTeacher}
+                                    onClick={updateUser}
                                     type="submit"
                                     class="btn-block btn-primary"
                                 >
-                                    Registrar Profesor
+                                    Guardar Cambios del Usuario
                                 </button>
                             </div>
                         </div>
@@ -209,8 +181,4 @@ function EditTeacher() {
 
     )
 }
-<<<<<<< HEAD
-export default EditTeaher
-=======
-export default EditTeacher
->>>>>>> c7680995a22ffa9631df547cd168d4ee40fc5ea3
+export default EditUser

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { ApiUrl } from "../services/apiServices";
+import { ApiUrl} from "../services/apiServices";
+import {Link} from 'react-router-dom'
 const UserSearch = () => {
   const [client, setClient] = useState();
   const url = ApiUrl + "usuarios";
@@ -12,6 +13,17 @@ const UserSearch = () => {
   useEffect(() => {
     fetchApi();
   }, );
+
+  function deleteUser (idCedula){
+    fetch(ApiUrl + `usuario/${idCedula}`,{
+      method: 'DELETE',
+    }).then(res => res.json())
+    .then(data => {
+      console.log(data);
+      alert('User with id ' + idCedula + ' was deleted!')
+   
+    })
+  }
 
   return (
     <div>
@@ -35,7 +47,7 @@ const UserSearch = () => {
             <th scope="col">password</th>
             <th scope="col">type user</th>
             <th scope="col">status</th>
-            <th scope="col">number of credits</th>
+            
           </tr>
         </thead>
         <tbody>
@@ -51,7 +63,11 @@ const UserSearch = () => {
                     <td className="text-center">{client.password}</td>
                     <td className="text-center">{client.type_user}</td>
                     <td className="text-center">{client.status}</td>
-                    <td className="text-center">{client.numCredits}</td>
+                    <Link to={`/usuarios/${client.idCedula}`}><button className="btn btn-outline-info">Editar</button></Link>
+                  &nbsp;
+                  &nbsp;
+                  <button type="button" onClick={() => { deleteUser(client.idCedula) }} class="btn btn-outline-info">Borrar</button>
+                  
                   </tr>
                 );
               })}

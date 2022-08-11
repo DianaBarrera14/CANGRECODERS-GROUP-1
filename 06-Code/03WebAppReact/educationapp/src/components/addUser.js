@@ -2,11 +2,7 @@ import React, { useState } from 'react'
 import axios from 'axios'
 import { ApiUrl } from '../services/apiServices';
 //Construimos el componente
-<<<<<<< HEAD
-function AddStudent() {
-=======
-function AddTeacher() {
->>>>>>> c7680995a22ffa9631df547cd168d4ee40fc5ea3
+function AddUser() {
   const baseUrl = ApiUrl + "user";
   //Hooks para hacer el put
   //Hooks para hacer el put
@@ -21,15 +17,9 @@ function AddTeacher() {
   //Instalamos uniqid "npm i uniqid" si queremos un id único sino nel
   //Instalamos axios "npm i axios"
   //En package.json añadimos el proxy de nuestro localhost:port/
-<<<<<<< HEAD
-  function adddTeacher() {
+  function addUser() {
 
-    var student = {
-=======
-  function addTeacher() {
-
-    var teacher = {
->>>>>>> c7680995a22ffa9631df547cd168d4ee40fc5ea3
+    var users = {
       idCedula: idCedula,
       user: user,
       password: password,
@@ -38,12 +28,12 @@ function AddTeacher() {
       type_user: type_user,
       status: status
     }
-    console.log(teacher)
+    console.log(users)
 
-    axios.post(baseUrl, teacher)
+    axios.post(baseUrl, users)
       .then(res => {
-        alert(`Se ha registrado con exito a ${teacher.name} ${teacher.lastName}`);
-        window.location.href = "./profesores";
+        alert(`Se ha registrado con exito a ${users.name} ${users.lastName}`);
+        window.location.href = "./usuarios";
 
       })
       .then(err => { console.log(err) })
@@ -54,9 +44,9 @@ function AddTeacher() {
       <div class="container-fluid px-1 py-5 mx-auto">
         <div class="row d-flex justify-content-center">
           <div class="col-xl-7 col-lg-8 col-md-9 col-11 text-center">
-            <h3>REGISTRO DE PROFESORES</h3>
+            <h3>REGISTRO DE USUARIOS</h3>
             <p class="blue-text">
-              Complete todos los campos para registrar al Profesor
+              Complete todos los campos para registrar al Usuario
             </p>
             <div class="card">
 
@@ -64,7 +54,7 @@ function AddTeacher() {
                 <div class="form-group col-sm-6 flex-column d-flex">
 
                   <label class="form-control-label px-3">
-                    Cédula Profesor<span class="text-danger"> *</span>
+                    Cédula Usuario<span class="text-danger"> *</span>
                   </label>
                   <input
                     type="text"
@@ -108,28 +98,28 @@ function AddTeacher() {
                 <div class="form-group col-sm-6 flex-column d-flex">
                   {" "}
                   <label class="form-control-label px-3">
-                    Nombres del Profesor
+                    Nombres del usuario
                     <span class="text-danger"> *</span>
                   </label>{" "}
                   <input
                     type="text"
                     id="txtNombre"
                     name="txtNombre"
-                    placeholder="Nombres del Profesor"
+                    placeholder="Nombres del Usuario"
                     value={name} onChange={(e) => { setName(e.target.value) }}
                   />{" "}
                 </div>
                 <div class="form-group col-sm-6 flex-column d-flex">
                   {" "}
                   <label class="form-control-label px-3">
-                    Apellidos del profesor
+                    Apellidos del usuario
                     <span class="text-danger"> *</span>
                   </label>{" "}
                   <input
                     type="text"
                     id="txtApellido"
                     name="txtApellido"
-                    placeholder="Apellidos del Profesor "
+                    placeholder="Apellidos del Usuario "
                     value={lastName} onChange={(e) => { setLastName(e.target.value) }}
                   />{" "}
                 </div>
@@ -166,15 +156,11 @@ function AddTeacher() {
                 <div class="form-group col-sm-6">
                   {" "}
                   <button
-<<<<<<< HEAD
-                    onClick={adddTeacher}
-=======
-                    onClick={addTeacher}
->>>>>>> c7680995a22ffa9631df547cd168d4ee40fc5ea3
+                    onClick={addUser}
                     type="submit"
                     class="btn-block btn-primary"
                   >
-                    Registrar Profesor
+                    Registrar Usuario
                   </button>
                 </div>
               </div>
@@ -186,8 +172,4 @@ function AddTeacher() {
     
   )
 }
-<<<<<<< HEAD
-export default adddTeacher
-=======
-export default AddTeacher
->>>>>>> c7680995a22ffa9631df547cd168d4ee40fc5ea3
+export default AddUser
