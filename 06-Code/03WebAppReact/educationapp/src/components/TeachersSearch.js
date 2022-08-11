@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { ApiUrl } from "../services/apiServices";
+import { ApiUrl} from "../services/apiServices";
+import {Link, useNavigate} from 'react-router-dom'
 const TeachersSearch = () => {
   const [client, setClient] = useState();
   const url = ApiUrl + "profesores";

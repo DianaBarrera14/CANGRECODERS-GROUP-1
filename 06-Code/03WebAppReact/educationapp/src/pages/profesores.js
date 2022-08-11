@@ -1,4 +1,5 @@
 import React, { Component, useEffect, useState } from "react";
+import AddTeacher from "../components/addTeacher";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Cookies from "universal-cookie";
 import TeachersSearch from "../components/TeachersSearch";
@@ -18,7 +19,7 @@ export default class profesores extends Component {
       <div>
         <MenuApp />
         <TeachersSearch />
-        <Addteacher />
+        <AddTeacher />
        
       </div>
     );

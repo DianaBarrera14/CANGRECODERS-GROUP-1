@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import axios from 'axios'
 import { ApiUrl } from '../services/apiServices';
 //Construimos el componente
-function AddStudent() {
+function AddTeacher() {
   const baseUrl = ApiUrl + "user";
   //Hooks para hacer el put
   //Hooks para hacer el put
@@ -17,9 +17,9 @@ function AddStudent() {
   //Instalamos uniqid "npm i uniqid" si queremos un id único sino nel
   //Instalamos axios "npm i axios"
   //En package.json añadimos el proxy de nuestro localhost:port/
-  function adddTeacher() {
+  function addTeacher() {
 
-    var student = {
+    var teacher = {
       idCedula: idCedula,
       user: user,
       password: password,
@@ -156,7 +156,7 @@ function AddStudent() {
                 <div class="form-group col-sm-6">
                   {" "}
                   <button
-                    onClick={adddTeacher}
+                    onClick={addTeacher}
                     type="submit"
                     class="btn-block btn-primary"
                   >
@@ -172,4 +172,4 @@ function AddStudent() {
     
   )
 }
-export default adddTeacher
+export default AddTeacher

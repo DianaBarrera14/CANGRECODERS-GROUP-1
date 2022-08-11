@@ -3,7 +3,7 @@ import axios from 'axios'
 import { useParams, Link } from 'react-router-dom'
 import { ApiUrl } from '../services/apiServices';
 //Construimos el componente
-function EditStudent() {
+function EditTeacher() {
     const params = useParams();
     const baseUrl = ApiUrl + "usuario"
 
@@ -52,7 +52,7 @@ function EditStudent() {
         })
         
     }*/
-    function updateStudent() {
+    function updateTeacher() {
         //Nuevo objeto para actualizar el usuario:
         const actualizarusuario = {
             idCedula: idCedula,
@@ -201,4 +201,4 @@ function EditStudent() {
 
     )
 }
-export default EditTeaher
+export default EditTeacher
