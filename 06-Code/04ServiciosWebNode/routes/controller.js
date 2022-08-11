@@ -178,17 +178,21 @@ router.patch('/usuario/:id', async (req, res) => {
 })
 
 
-router.put('/usuario/:id', async (req, res) => {
+router.put('/usuario/:idCedula', async (req, res) => {
   try {
-      const idCedula = req.params.id;
       const updatedData = req.body;
       const options = { new: true };
 
       const result = await usuario.findOneAndUpdate(
-          idCedula, updatedData, options
+        {idCedula : req.params.idCedula}, updatedData, options
       )
-
-      res.send(result)
+        if(!result){
+          res.status(400).json({ message: 'idCedula or body incorrect' })
+        }else{
+          res.send(result)
+        }
+      
+     
   }
   catch (error) {
       res.status(400).json({ message: error.message })
