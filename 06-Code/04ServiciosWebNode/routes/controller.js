@@ -2,14 +2,7 @@ const express = require("express");
 const usuario = require("../models/users");
 const router = express.Router();
 
-router.use(function (req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*"); // update to match the domain you will make the request from
-  res.header(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept"
-  );
-  next();
-});
+
 //Get all users
 router.get("/usuarios", async (req, res) => {
   try {
@@ -137,28 +130,20 @@ router.delete('/usuario', (req, res) => {
 
 //update by id
 
-router.put('/usuario', (req, res, next) => {
-    const usuarioObj = new usuario({
-    idCedula: require.body.idCedula,
-    user: require.body.user,
-    password: require.body.password,
-    name: require.body.name,
-    lastName: require.body.lastName,
-    type_user: require.body.type_user,
-    status: require.body.status
-  });
-  usuario.updateOne({cedula: req.body.idCedula}, usuarioObj).then(
-    () => {
-      res.status(201).json({
-        message: 'User updated successfully!'
-      });
-    }
-  ).catch(
-    (error) => {
-      res.status(400).json({
-        error: error
-      });
-    }
-  );
-});
+router.patch('/usuario/:id', async (req, res) => {
+  try {
+      const idCedula = req.params.id;
+      const updatedData = req.body;
+      const options = { new: true };
+
+      const result = await usuario.findOneAndUpdate(
+          idCedula, updatedData, options
+      )
+
+      res.send(result)
+  }
+  catch (error) {
+      res.status(400).json({ message: error.message })
+  }
+})
 module.exports = router;
