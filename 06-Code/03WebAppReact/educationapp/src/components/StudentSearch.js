@@ -1,19 +1,42 @@
 import React, { useEffect, useState } from "react";
 import { ApiUrl } from "../services/apiServices";
 
+import axios from 'axios';
 const StudentSearch = () => {
   const [client, setClient] = useState();
   const url = ApiUrl + "students";
   const fetchApi = async () => {
-    const response = await fetch(url);
-    const responseJSON = await response.json();
+  const response = await fetch(url);
+  const responseJSON = await response.json();
+
     setClient(responseJSON);
-    
+
+
+
   };
   useEffect(() => {
     fetchApi();
-  }, );
+  });
+  function deleteds (idCedula){
+    fetch(ApiUrl + `usuario/${idCedula}`,{
+      method: 'DELETE',
+    }).then(res => res.json())
+    .then(data => {
+      console.log(data);
+      alert('Student with id ' + idCedula + ' was deleted!')
+   
+    })
+  }
+  /*Other option to delete
+  function deletestudent(idCedula) {
+    axios.post(ApiUrl + 'usuario', { idCedula: idCedula }).then(res => {
+      console.log(res.data)
+      alert('Student with id ' + idCedula + ' was deleted!')
 
+    }).catch(err => {
+      console.log(err)
+    })
+  }*/
   return (
     <div>
       <div class="card-body">
@@ -43,19 +66,22 @@ const StudentSearch = () => {
           {!client
             ? "Loading"
             : client.map((client, index) => {
-                return (
-                  <tr className="table-info">
-                    <td className="text-center">{client.idCedula}</td>
-                    <td className="text-center">{client.name}</td>
-                    <td className="text-center">{client.lastName}</td>
-                    <td className="text-center">{client.user}</td>
-                    <td className="text-center">{client.password}</td>
-                    <td className="text-center">{client.type_user}</td>
-                    <td className="text-center">{client.status}</td>
-                    <td className="text-center">{client.numCredits}</td>
-                  </tr>
-                );
-              })}
+              return (
+                <tr className="table-info">
+                  <td className="text-center">{client.idCedula}</td>
+                  <td className="text-center">{client.name}</td>
+                  <td className="text-center">{client.lastName}</td>
+                  <td className="text-center">{client.user}</td>
+                  <td className="text-center">{client.password}</td>
+                  <td className="text-center">{client.type_user}</td>
+                  <td className="text-center">{client.status}</td>
+                  <td className="text-center">{client.numCredits}</td>
+                  &nbsp;
+                  <button type="button" onClick={() => { deleteds(client.idCedula) }} class="btn btn-outline-info">Borrar</button>
+                </tr>
+
+              );
+            })}
         </tbody>
       </table>
     </div>
