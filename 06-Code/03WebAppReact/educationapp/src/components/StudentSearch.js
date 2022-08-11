@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { ApiUrl } from "../services/apiServices";
+import {Link, useNavigate} from 'react-router-dom'
 
-import axios from 'axios';
 const StudentSearch = () => {
   const [client, setClient] = useState();
   const url = ApiUrl + "students";
   const fetchApi = async () => {
   const response = await fetch(url);
   const responseJSON = await response.json();
+  
 
     setClient(responseJSON);
 
@@ -76,8 +77,12 @@ const StudentSearch = () => {
                   <td className="text-center">{client.type_user}</td>
                   <td className="text-center">{client.status}</td>
                   <td className="text-center">{client.numCredits}</td>
+                  <td>
+                  <Link to={`/alumnos/${client.idCedula}`}><button className="btn btn-outline-info">Editar</button></Link>
+                  &nbsp;
                   &nbsp;
                   <button type="button" onClick={() => { deleteStudent(client.idCedula) }} class="btn btn-outline-info">Borrar</button>
+                  </td>
                 </tr>
 
               );

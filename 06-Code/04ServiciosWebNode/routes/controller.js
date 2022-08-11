@@ -133,6 +133,17 @@ router.delete('/usuario/:idCedula', async (req, res) => {
   .then(res.json({status: 'Deleted!'}))
   .catch((error) => res.status(400).json({ message: error.message }));
 } )
+
+//Get user by id
+router.post('/usuario',  (req, res) => {
+  usuario.find({idCedula: req.body.idCedula}, function(docs, err){
+      if(!err){
+          res.send(docs)
+      }else{
+          res.send(err)
+      }
+  })
+})
 //update by id
 
 
