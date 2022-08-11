@@ -2,14 +2,7 @@ const express = require("express");
 const usuario = require("../models/users");
 const router = express.Router();
 
-router.use(function (req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*"); // update to match the domain you will make the request from
-  res.header(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept"
-  );
-  next();
-});
+
 //Get all users
 router.get("/usuarios", async (req, res) => {
   try {
@@ -141,6 +134,25 @@ router.delete('/usuario/:idCedula', async (req, res) => {
   .catch((error) => res.status(400).json({ message: error.message }));
 } )
 //update by id
+
+
+router.patch('/usuario/:id', async (req, res) => {
+  try {
+      const idCedula = req.params.id;
+      const updatedData = req.body;
+      const options = { new: true };
+
+      const result = await usuario.findOneAndUpdate(
+          idCedula, updatedData, options
+      )
+
+      res.send(result)
+  }
+  catch (error) {
+      res.status(400).json({ message: error.message })
+  }
+})
+
 
 router.put('/usuario/:id', async (req, res) => {
   try {

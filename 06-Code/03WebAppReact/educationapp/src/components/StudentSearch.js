@@ -17,7 +17,7 @@ const StudentSearch = () => {
   useEffect(() => {
     fetchApi();
   });
-  function deleteds (idCedula){
+  function deleteStudent (idCedula){
     fetch(ApiUrl + `usuario/${idCedula}`,{
       method: 'DELETE',
     }).then(res => res.json())
@@ -28,7 +28,7 @@ const StudentSearch = () => {
     })
   }
   /*Other option to delete
-  function deletestudent(idCedula) {
+  function deleteStudent(idCedula) {
     axios.post(ApiUrl + 'usuario', { idCedula: idCedula }).then(res => {
       console.log(res.data)
       alert('Student with id ' + idCedula + ' was deleted!')
@@ -77,7 +77,7 @@ const StudentSearch = () => {
                   <td className="text-center">{client.status}</td>
                   <td className="text-center">{client.numCredits}</td>
                   &nbsp;
-                  <button type="button" onClick={() => { deleteds(client.idCedula) }} class="btn btn-outline-info">Borrar</button>
+                  <button type="button" onClick={() => { deleteStudent(client.idCedula) }} class="btn btn-outline-info">Borrar</button>
                 </tr>
 
               );
