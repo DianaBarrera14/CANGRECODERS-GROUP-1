@@ -62,7 +62,7 @@ router.get("/profesores", async (req, res) => {
 
 //Get user student
 
-router.get("/estudiantes", async (req, res) => {
+router.get("/students", async (req, res) => {
   try {
     const userObj = await usuario.find({ type_user: "Alumno" });
     if (userObj == null) {
