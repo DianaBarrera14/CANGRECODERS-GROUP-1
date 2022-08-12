@@ -43,11 +43,14 @@ const StudentSearch = () => {
       <div class="card-body">
         <br />
         <br />
-        <h3 className="text-center">GET STUDENTS INFORMATION FROM API</h3>
+        <h3 className="text-center">Students list </h3> 
+
+        <div className="col-auto text-center">
+            <a  href="#control"><button type="button" class="btn btn-success">Insert student</button></a>
+        </div>
         <br />
-        <h5>This shows students information from API: {url}</h5>
-        <br />
-        <br />
+        <p>This shows students information from API: {url} </p> 
+
       </div>
 
       <table className="table table-hover">
@@ -60,7 +63,7 @@ const StudentSearch = () => {
             <th scope="col">password</th>
             <th scope="col">type user</th>
             <th scope="col">status</th>
-            <th scope="col">number of credits</th>
+            
           </tr>
         </thead>
         <tbody>
@@ -76,8 +79,8 @@ const StudentSearch = () => {
                   <td className="text-center">{client.password}</td>
                   <td className="text-center">{client.type_user}</td>
                   <td className="text-center">{client.status}</td>
-                  <td className="text-center">{client.numCredits}</td>
                   <td>
+                  &nbsp;&nbsp;
                   <Link to={`/alumnos/${client.idCedula}`}><button className="btn btn-outline-info">Editar</button></Link>
                   &nbsp;
                   &nbsp;
@@ -89,6 +92,10 @@ const StudentSearch = () => {
             })}
         </tbody>
       </table>
+      <br /><br /><br /><br /><br />
+      <div id="control">
+        
+      </div>
     </div>
   );
 };

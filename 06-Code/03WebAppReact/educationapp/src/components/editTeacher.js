@@ -3,11 +3,11 @@ import axios from 'axios'
 import { useParams, Link } from 'react-router-dom'
 import { ApiUrl } from '../services/apiServices';
 //Construimos el componente
-<<<<<<< HEAD
-function EditStudent() {
-=======
+
+
+
 function EditTeacher() {
->>>>>>> c7680995a22ffa9631df547cd168d4ee40fc5ea3
+
     const params = useParams();
     const baseUrl = ApiUrl + "usuario"
 
@@ -35,32 +35,9 @@ function EditTeacher() {
         })
     }, [])
 
-    //Funcion para actualizar
-    /*function updateTeacher(idCedula){
-        fetch(baseUrl+`/${idCedula}`,{
-            method: 'PUT',
-            body: 
-          })
-        .then(res => res.json())
-        .then(data => {
-            console.log(data);
-            this.setState({
-                idCedula: data.idCedula,
-                user: data.user,
-                password: data.password,
-                name: data.name,
-                lastName: data.lastName,
-                type_user: data.type_user,
-                status: data.status
-            })
-        })
-        
-    }*/
-<<<<<<< HEAD
-    function updateStudent() {
-=======
+
     function updateTeacher() {
->>>>>>> c7680995a22ffa9631df547cd168d4ee40fc5ea3
+
         //Nuevo objeto para actualizar el usuario:
         const actualizarusuario = {
             idCedula: idCedula,
@@ -209,8 +186,5 @@ function EditTeacher() {
 
     )
 }
-<<<<<<< HEAD
-export default EditTeaher
-=======
+
 export default EditTeacher
->>>>>>> c7680995a22ffa9631df547cd168d4ee40fc5ea3

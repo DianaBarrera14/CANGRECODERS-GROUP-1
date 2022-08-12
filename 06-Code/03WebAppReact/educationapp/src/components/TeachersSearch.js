@@ -87,9 +87,6 @@ const TeachersSearch = () => {
   );
 };
 
-<<<<<<< HEAD
+
 export default TeachersSearch;
 
-=======
-export default TeachersSearch;
->>>>>>> c7680995a22ffa9631df547cd168d4ee40fc5ea3

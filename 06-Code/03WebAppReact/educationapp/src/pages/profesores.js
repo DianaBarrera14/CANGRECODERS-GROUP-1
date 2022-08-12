@@ -19,11 +19,9 @@ export default class profesores extends Component {
       <div>
         <MenuApp />
         <TeachersSearch />
-<<<<<<< HEAD
-        <Addteacher />
-=======
+
         <AddTeacher />
->>>>>>> c7680995a22ffa9631df547cd168d4ee40fc5ea3
+
        
       </div>
     );
