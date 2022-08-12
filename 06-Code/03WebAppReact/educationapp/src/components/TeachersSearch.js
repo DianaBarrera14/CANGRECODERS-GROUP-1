@@ -55,7 +55,6 @@ const TeachersSearch = () => {
             <th scope="col">password</th>
             <th scope="col">type user</th>
             <th scope="col">status</th>
-            <th scope="col">number of credits</th>
           </tr>
         </thead>
         <tbody>
