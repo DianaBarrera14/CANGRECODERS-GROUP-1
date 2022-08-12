@@ -49,7 +49,7 @@ function EditTeacher() {
             status: status
         }
         //Hacer la petición usando axios
-        axios.put(baseUrl+`/${idCedula}`, actualizarusuario)
+        axios.put(baseUrl+`/${params.id}`, actualizarusuario)
             .then(res => {
                 console.log(res.data)
                 alert('Teacher with id: '+res.data.idCedula+' was updated.')
@@ -66,7 +66,7 @@ function EditTeacher() {
             <div class="row d-flex justify-content-center">
 
                 <div class="col-xl-7 col-lg-8 col-md-9 col-11 text-center">
-                    <Link to={`/Teachers`}><button className="btn btn-primary btn-lg btn-block">Volver a listar profesores</button></Link>
+                    <Link to={`/profesores`}><button className="btn btn-primary btn-lg btn-block">Volver a listar profesores</button></Link>
                     <hr />
                     <h3>REGISTRO DE PROFESORES</h3>
                     <p class="blue-text">

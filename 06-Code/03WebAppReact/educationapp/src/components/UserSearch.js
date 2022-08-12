@@ -30,11 +30,13 @@ const UserSearch = () => {
       <div class="card-body">
         <br />
         <br />
-        <h3 className="text-center">GET USERS INFORMATION FROM API</h3>
+        <h3 className="text-center">Users list </h3> 
+
+        <div className="col-auto text-center">
+            <a  href="#control"><button type="button" class="btn btn-success">Insert user</button></a>
+        </div>
         <br />
-        <h5>This shows user information from API: {url}</h5>
-        <br />
-        <br />
+        <p>This shows students information from API: {url} </p> 
       </div>
 
       <table className="table table-hover">
@@ -47,7 +49,6 @@ const UserSearch = () => {
             <th scope="col">password</th>
             <th scope="col">type user</th>
             <th scope="col">status</th>
-            
           </tr>
         </thead>
         <tbody>
@@ -63,16 +64,22 @@ const UserSearch = () => {
                     <td className="text-center">{client.password}</td>
                     <td className="text-center">{client.type_user}</td>
                     <td className="text-center">{client.status}</td>
+                    <td>
+                    &nbsp;&nbsp;
                     <Link to={`/usuarios/${client.idCedula}`}><button className="btn btn-outline-info">Editar</button></Link>
-                  &nbsp;
-                  &nbsp;
-                  <button type="button" onClick={() => { deleteUser(client.idCedula) }} class="btn btn-outline-info">Borrar</button>
-                  
+                    &nbsp;
+                    &nbsp;
+                    <button type="button" onClick={() => { deleteUser(client.idCedula) }} class="btn btn-outline-info">Borrar</button>
+                    </td>
                   </tr>
                 );
               })}
         </tbody>
       </table>
+      <br /><br /><br /><br /><br />
+      <div id="control">
+        
+      </div>
     </div>
   );
 };

@@ -38,11 +38,13 @@ const TeachersSearch = () => {
       <div class="card-body">
         <br />
         <br />
-        <h3 className="text-center">GET TEACHERS INFORMATION FROM API</h3>
+        <h3 className="text-center">Teachers list </h3> 
+
+        <div className="col-auto text-center">
+            <a  href="#control"><button type="button" class="btn btn-success">Insert teacher</button></a>
+        </div>
         <br />
-        <h5>This shows teacher information from API: {url}</h5>
-        <br />
-        <br />
+        <p>This shows students information from API: {url} </p> 
       </div>
 
       <table className="table table-hover">
@@ -82,6 +84,10 @@ const TeachersSearch = () => {
             })}
         </tbody>
       </table>
+      <br /><br /><br /><br /><br />
+      <div id="control">
+        
+      </div>
     </div>
   );
 };
